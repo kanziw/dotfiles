@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /Users/kanziw/.gitignore_global
+[user]
+	name = kanziw
+	email = kanziwoong@gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/

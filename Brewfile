@@ -19,6 +19,10 @@ brew "jq"
 brew "tree"
 brew "wget"
 
+# Git
+brew "git"
+brew "git-lfs"
+
 # Node.js
 brew "nvm"
 brew "yarn", args: ["without-node"]
