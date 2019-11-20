@@ -52,13 +52,27 @@ brew "mysql-client"
 cask "mysqlworkbench"
 
 # Applications
+cask "1password"
+cask "alfred"
 cask "docker"
 cask "dropbox"
 cask "font-hack-nerd-font"
+cask "google-backup-and-sync"
+cask "google-chrome"
+cask "intellij-idea"
 cask "iterm2"
+cask "itsycal"
+cask "keybase"
+cask "keyboard-maestro"
+cask "mongodb-compass"
 cask "ngrok"
+cask "postman"
+cask "sourcetree"
+cask "sublime-text"
 cask "telegram-desktop"
+cask "typora"
 cask "visual-studio-code"
+cask "vlc"
 
 # from Mac Appstore
 mas "KakaoTalk", id: 869223134
