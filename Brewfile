@@ -18,6 +18,7 @@ brew "fx"
 brew "jq"
 brew "tree"
 brew "wget"
+brew "wrk"
 
 # Git
 brew "git"
@@ -45,7 +46,9 @@ brew "gomplate"
 brew "kubernetes-cli"
 brew "kube-ps1"
 brew "kubectx"
-brew "kubernetes-helm"
+brew "helm"
+tap "thecasualcoder/stable"
+brew "thecasualcoder/stable/kube-fzf"
 
 # DB
 brew "mysql-client"
@@ -56,6 +59,7 @@ cask "1password"
 cask "alfred"
 cask "docker"
 cask "dropbox"
+cask "easy-move-plus-resize"
 cask "font-hack-nerd-font"
 cask "google-backup-and-sync"
 cask "google-chrome"
@@ -79,6 +83,7 @@ mas "KakaoTalk", id: 869223134
 mas "Keynote", id: 409183694
 mas "Melon", id: 1236050766
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "Numbers", id: 409203825
 mas "Owly", id: 882812218
 mas "Quiver", id: 866773894
 mas "Slack", id: 803453959
