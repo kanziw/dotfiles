@@ -1,0 +1,6 @@
+#!/usr/local/bin/zsh
+
+CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
+
+git push --tags --set-upstream origin $CURRENT_BRANCH_NAME
+
