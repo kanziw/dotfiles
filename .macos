@@ -7,6 +7,8 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+sudo languagesetup -langspec en
+
 # Set ₩ to `
 curl -sSL https://gist.githubusercontent.com/kanziw/d68a21ed7bc1e7f9dae7ecd7f20e2939/raw/0d55b37b60e0e0bd3d0d7f53995de0a722f9820c/kr_won_to_backquote.sh | sh
 
