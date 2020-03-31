@@ -1,6 +1,4 @@
 echo "+git"
-# Git
-brew install git git-lfs
 
 if [ -f ~/.gitignore_global ]; then
   rm ~/.gitignore_global
