@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
 ROOT_GIT_PATH=`git rev-parse --show-toplevel`

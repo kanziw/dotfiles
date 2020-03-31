@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
 CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
 

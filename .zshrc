@@ -60,5 +60,5 @@ export PATH=$PYENV_ROOT/bin:$PATH
 # k8s helper
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
-kubeoff
-#KUBE_PS1_BINARY=oc
+# kubeoff
+# KUBE_PS1_BINARY=oc
