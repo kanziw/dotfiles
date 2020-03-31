@@ -23,6 +23,9 @@ brew "wrk"
 brew "git"
 brew "git-lfs"
 
+# Node.js
+brew "nodejs"
+
 # Scala
 brew "giter8"
 brew "sbt"

@@ -43,6 +43,10 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# pure-promt
+autoload -U promptinit; promptinit
+prompt pure
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/gettext/bin:$PATH"
