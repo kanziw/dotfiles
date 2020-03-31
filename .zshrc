@@ -8,22 +8,18 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
   fasd
 )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# pure-promt
-autoload -U promptinit; promptinit
-prompt pure
-
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
@@ -52,19 +48,13 @@ load-nvmrc
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # pyenv
 eval "$(pyenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH=$PYENV_ROOT/bin:$PATH
 
 # k8s helper
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 kubeoff
 #KUBE_PS1_BINARY=oc
-
-# Add Visual Studio Code (code)
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

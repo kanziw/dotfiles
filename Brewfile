@@ -13,7 +13,6 @@ brew "fzf"
 
 # Basic
 brew "bat"
-brew "direnv"
 brew "fx"
 brew "jq"
 brew "tree"
@@ -23,10 +22,6 @@ brew "wrk"
 # Git
 brew "git"
 brew "git-lfs"
-
-# Node.js
-brew "nvm"
-brew "yarn", args: ["without-node"]
 
 # Scala
 brew "giter8"
