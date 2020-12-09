@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+stern -l app=$1 -c $1
+

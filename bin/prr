@@ -1,7 +1,9 @@
 #!/bin/zsh
 
+VARIABLES=$1
+ORGANIZATION=${VARIABLES:=banksalad}
 CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
 ROOT_GIT_PATH=`git rev-parse --show-toplevel`
 PROJECT_NAME=`basename $ROOT_GIT_PATH`
 
-open "https://github.com/Rainist/$PROJECT_NAME/compare/$CURRENT_BRANCH_NAME?expand=1"
+open "https://github.com/$ORGANIZATION/$PROJECT_NAME/compare/$CURRENT_BRANCH_NAME?expand=1"

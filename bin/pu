@@ -1,6 +1,8 @@
 #!/bin/zsh
 
+VARIABLES=$1
+ORIGIN=${VARIABLES:=origin}
 CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
 
-git push --tags --set-upstream origin $CURRENT_BRANCH_NAME
+git push --tags --set-upstream $ORIGIN $CURRENT_BRANCH_NAME
 
