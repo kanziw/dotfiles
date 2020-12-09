@@ -1,29 +1,41 @@
+tap "adoptopenjdk/openjdk"
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "ringohub/redis-cli"
+tap "thecasualcoder/stable"
+tap "theeternalsw0rd/telnet"
 
 # Zsh
+brew "fasd"
+brew "fzf"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
-brew "fasd"
-brew "fzf"
 
 # Basic
 brew "bat"
+brew "direnv"
 brew "fx"
 brew "jq"
+brew "mas"
+brew "telnet"
 brew "tree"
 brew "wget"
 brew "wrk"
+brew "yq"
 
 # Git
 brew "git"
 brew "git-lfs"
+brew "gh"
 
 # Node.js
+brew "deno"
 brew "nodejs"
+brew "yarn"
 
 # Scala
 brew "giter8"
@@ -39,21 +51,32 @@ brew "python"
 brew "go"
 brew "gomplate"
 
-# Kubernetes
+# JVM
+brew "openjdk"
+
+# Infrastructure
+brew "awscli"
+brew "helm"
+brew "httpie"
 brew "kubernetes-cli"
 brew "kube-ps1"
 brew "kubectx"
-brew "helm"
-tap "thecasualcoder/stable"
-brew "thecasualcoder/stable/kube-fzf"
-
-# DB
+brew "minikube"
 brew "mysql-client"
-cask "mysqlworkbench"
+brew "ringohub/redis-cli/redis-cli"
+brew "stern"
+brew "terraform"
+brew "thecasualcoder/stable/kube-fzf"
 
 # Applications
 cask "1password"
+cask "adoptopenjdk11"
+cask "adoptopenjdk8"
+cask "aerial"
 cask "alfred"
+cask "authy"
+cask "bloomrpc"
+cask "datagrip"
 cask "docker"
 cask "dropbox"
 cask "easy-move-plus-resize"
@@ -65,13 +88,18 @@ cask "google-chrome"
 cask "intellij-idea"
 cask "iterm2"
 cask "itsycal"
+cask "jeromelebel-mongohub"
 cask "keybase"
 cask "keyboard-maestro"
+cask "kitematic"
 cask "lens"
 cask "mongodb-compass"
+cask "mysqlworkbench"
 cask "ngrok"
+cask "notion"
 cask "postman"
 cask "pycharm"
+cask "sequel-pro"
 cask "sourcetree"
 cask "sublime-text"
 cask "telegram-desktop"
