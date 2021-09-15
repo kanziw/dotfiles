@@ -1,4 +1,6 @@
 #!/bin/zsh
 
-stern -l app=$1 -c $1
+TAIL=${2:-100}
+
+stern -l app=$1 -c $1 --tail $TAIL
 

@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+kubectl get service,deploy,configmap,secret,statefulset,netpol,hpa,ingress -l app=$1

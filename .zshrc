@@ -16,6 +16,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   fasd
+  fzf
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,7 +69,7 @@ export PATH=$PYENV_ROOT/bin:$PATH
 # k8s helper
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
-# kubeoff
+#kubeoff
 # KUBE_PS1_BINARY=oc
 
 # direnv
