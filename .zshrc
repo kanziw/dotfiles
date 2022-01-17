@@ -1,11 +1,16 @@
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 export PATH=$HOME/bin:$PATH
-export GOPATH=$HOME/go
-export GOROOT="$(brew --prefix golang)/libexec"
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/local/opt/libpq/bin:/usr/local/mysql/bin
 export PATH=$HOME/.deno/bin:$PATH
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 # Alias
 alias k=kubectl
+#alias cat=bat
+alias gomplate='docker run hairyhenderson/gomplate:stable'
+alias alpha="aws-vault exec daangn/alpha -- "
+alias prod="aws-vault exec daangn/prod -- "
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -69,12 +74,10 @@ export PATH=$PYENV_ROOT/bin:$PATH
 # k8s helper
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
-#kubeoff
+kubeoff
 # KUBE_PS1_BINARY=oc
 
 # direnv
 eval "$(direnv hook zsh)"
-
-[[ -s "/Users/kanziw/.gvm/scripts/gvm" ]] && source "/Users/kanziw/.gvm/scripts/gvm"
 
 export KUBECONFIG=~/.kube/config:~/.kube/production:~/.kube/staging

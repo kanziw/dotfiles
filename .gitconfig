@@ -13,3 +13,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/kanziw/.stCommitMsg
+[init]
+	defaultBranch = main
