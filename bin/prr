@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 VARIABLES=$1
-ORGANIZATION=${VARIABLES:=banksalad}
+ORGANIZATION=${VARIABLES:=daangn}
 CURRENT_BRANCH_NAME=`git symbolic-ref --short HEAD`;
 ROOT_GIT_PATH=`git rev-parse --show-toplevel`
 PROJECT_NAME=`basename $ROOT_GIT_PATH`
