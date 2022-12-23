@@ -1,7 +1,8 @@
 [core]
 	excludesfile = /Users/kanziw/.gitignore_global
+	editor = code --wait
 [user]
-	name = kanziw
+	name = Jiwoong Jung
 	email = kanziwoong@gmail.com
 [url "git@github.com:"]
 	insteadOf = https://github.com/
@@ -15,3 +16,8 @@
 	template = /Users/kanziw/.stCommitMsg
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

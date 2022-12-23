@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+#DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+DEFAULT_BRANCH=main
 
 git fetch --all --prune;
 git checkout $DEFAULT_BRANCH;
