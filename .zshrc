@@ -7,9 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-export PATH=$HOME/bin:$PATH
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/local/opt/libpq/bin:/usr/local/mysql/bin
 export PATH=$HOME/.deno/bin:$PATH
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"

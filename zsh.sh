@@ -13,11 +13,8 @@ $(brew --prefix)/opt/fzf/install
 
 ln -s $(pwd)/bin ~/bin
 
-# pure-prompt shell
-npm install --global pure-prompt
-
-# gvm
-zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# Powerlevel10k prompt
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
