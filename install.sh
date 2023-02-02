@@ -8,3 +8,5 @@ source .macos
 brew bundle
 source zsh.sh
 source git.sh
+source tool-versions.sh
+source alfred.sh
