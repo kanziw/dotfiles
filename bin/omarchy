@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+skills_repo="${SKILLS_REPO:-$HOME/workspace/skills}"
+state_file="${OMARCHY_STATE:-$skills_repo/skills/omarchy/.state.json}"
+
+if [ "$#" -ne 0 ]; then
+  echo "usage: omarchy" >&2
+  exit 2
+fi
+
+if [ ! -f "$state_file" ]; then
+  echo "omarchy: shared skill state not found: $state_file" >&2
+  exit 2
+fi
+
+if ! config="$(python3 - "$state_file" <<'PY'
+import json
+import pathlib
+import sys
+
+data = json.loads(pathlib.Path(sys.argv[1]).read_text())
+keys = ("ssh_user", "lan_host", "identity_file", "workspace_dir")
+values = [data.get(key, "") for key in keys]
+if not all(isinstance(value, str) and value for value in values):
+    raise SystemExit("omarchy: incomplete shared skill state")
+print("\t".join(values))
+PY
+)"; then
+  echo "omarchy: failed to read shared skill state" >&2
+  exit 2
+fi
+
+IFS=$'\t' read -r ssh_user lan_host identity_file workspace_dir <<< "$config"
+case "$identity_file" in
+  "~"/*) identity_file="$HOME/${identity_file#\~/}" ;;
+esac
+
+if [ ! -f "$identity_file" ]; then
+  echo "omarchy: identity file not found: $identity_file" >&2
+  exit 2
+fi
+if [[ "$workspace_dir" == /* || "$workspace_dir" == *..* || ! "$workspace_dir" =~ ^[A-Za-z0-9._/-]+$ ]]; then
+  echo "omarchy: workspace_dir must be a safe path relative to the remote home" >&2
+  exit 2
+fi
+
+exec ssh -tt \
+  -o ConnectTimeout=8 \
+  -o ConnectionAttempts=1 \
+  -o StrictHostKeyChecking=yes \
+  -o IdentitiesOnly=yes \
+  -i "$identity_file" \
+  "$ssh_user@$lan_host" \
+  "cd \"\$HOME/$workspace_dir\" && exec \"\${SHELL:-/bin/bash}\" -l"
